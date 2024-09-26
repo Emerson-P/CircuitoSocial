@@ -1,0 +1,30 @@
+CREATE TABLE usuarios (
+id int NOT NULL AUTO_INCREMENT,
+email varchar(255) NOT NULL,
+PRIMARY KEY (OrderID),
+FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+CREATE TABLE usuarios (
+id int NOT NULL AUTO_INCREMENT,
+email varChar(255) NOT NULL,
+nome varChar(255) NOT NULL,
+senha varChar(255) NOT NULL,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE posts (
+id int NOT NULL AUTO_INCREMENT,
+id_usuario int NOT NULL,
+post varChar(255) NOT NULL,
+data DATE NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);
+
+CREATE TABLE usuarios_seguidores (
+id_usuario int NOT NULL ,
+id_usuario_seguindo int NOT NULL,
+FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+FOREIGN KEY (id_usuario_seguindo) REFERENCES usuarios(id)
+);
